@@ -11,6 +11,14 @@ li {
   margin: 10px 0;
 }
 
+img {
+  max-width: 100%;
+  border-radius: 8px;
+  float: left;
+  margin-right: 15px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
 .icon img {
   border-radius: 0px;
   float: right;
@@ -21,6 +29,55 @@ li {
 
 @media screen and (max-width: 640px) {
   .icon img {
-    max-width: 25%;
+    max-width: 25px;
   }
 }
+
+.emoj img {
+  float: none;
+  vertical-align: middle;
+  display: inline-block;
+  border-radius: 0px;
+  margin: 1px 0px 1px 0px;
+  box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0), 0 0px 0px 0 rgba(0, 0, 0, 0);
+}
+
+.button {
+  background-color: rgba(51, 51, 51, 0.05);
+  border-radius: 8px;
+  border-width: 0;
+  color: #333333;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 10px 12px;
+  text-align: center;
+  transition: all 200ms;
+  vertical-align: baseline;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+article {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+article img {
+  max-width: 20em;
+}
+
+article section {
+  padding: 0.5rem 0;
+}
+
+/* article .paper-info {
+  order: -1
+} */

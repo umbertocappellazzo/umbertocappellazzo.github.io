@@ -41,8 +41,7 @@ navbar-links:
   Publications: "#publications"
   Education: "#education"
 
-navbar-extra: 
- - navbar-extra.html
+navbar-extra: navbar-extra.html
 
 twitter_username: jekyllrb
 github_username:  umbertocappellazzo
