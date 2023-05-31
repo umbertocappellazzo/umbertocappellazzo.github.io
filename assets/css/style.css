@@ -1,0 +1,12 @@
+mark {
+  background-color: #c0ffc8;
+}
+
+.border-highlight {
+  border: 2px dashed red;
+  padding: 0.03em 0.25em;
+}
+
+li {
+  margin: 10px 0;
+}

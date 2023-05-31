@@ -18,7 +18,11 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Your awesome title
+title: Umberto Cappellazzo
+
+# Your name to show in the footer
+author: Umberto Cappellazzo 
+
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
@@ -26,14 +30,42 @@ description: >- # this means to ignore newlines until "baseurl:"
   Google search results) and in your feed.xml site description.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
 
+###############################################
+# --- List of links in the navigation bar --- #
+###############################################
+
+navbar-links:
+  About Me: "aboutme"
+  Resources:
+    - Beautiful Jekyll: "https://beautifuljekyll.com"
+    - Learn markdown: "https://www.markdowntutorial.com/"
+  Author's home: "https://deanattali.com"
+
+twitter_username: jekyllrb
+github_username:  umbertocappellazzo
+
+################
+# --- Logo --- #
+################
+
+# Image to show in the navigation bar - works best with a square image
+# Remove this parameter if you don't want an image in the navbar
+avatar: "/assets/img/profile.jpeg"
+
+# By default, the image is cut into a circle. You can disable this behaviour by setting 'round-avatar: false'
+round-avatar: true
+
+###############################################
 # Build settings
 # theme: minima
+
+# Use theme following these instructions: https://beautifuljekyll.com/getstarted/#install-steps-hard
 remote_theme: daattali/beautiful-jekyll@5.0.0
 plugins:
   - jekyll-feed
+
+# To include images in the `images/` folder
 defaults:
   - scope:
       path: "images"
