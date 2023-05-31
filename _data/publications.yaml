@@ -1,0 +1,19 @@
+- date:
+  title: An Investigation of the Combination of Rehearsal and Knowledge Distillation in Continual Learning for Spoken Language Understanding
+  description:
+  publisher: INTERSPEECH 2023
+  image: /assets/img/FSC_CL.png
+  author: Umberto Cappellazzo, Daniele Falavigna, Alessio Brutti
+  links:
+    paper: https://arxiv.org/abs/2211.08161
+    source_code: https://github.com/umbertocappellazzo/CL_SLU
+
+- date:
+  title: Sequence-Level Knowledge Distillation for Class-Incremental End-to-End Spoken Language Understanding
+  description:
+  publisher: INTERSPEECH 2023
+  image: /assets/img/IS_slurp.png
+  author: Umberto Cappellazzo, Muqiao Yang, Daniele Falavigna, Alessio Brutti
+  links:
+    paper: https://arxiv.org/abs/2305.13899
+    source_code: https://github.com/umbertocappellazzo/SLURP-SeqKD
