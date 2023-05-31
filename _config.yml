@@ -19,6 +19,7 @@
 # in the templates via {{ site.myvariable }}.
 
 title: Umberto Cappellazzo
+subtitle: PhD student @ UniTn on CL for audio and speech
 
 # Your name to show in the footer
 author: Umberto Cappellazzo 
@@ -36,11 +37,12 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 ###############################################
 
 navbar-links:
-  About Me: "aboutme"
-  Resources:
-    - Beautiful Jekyll: "https://beautifuljekyll.com"
-    - Learn markdown: "https://www.markdowntutorial.com/"
-  Author's home: "https://deanattali.com"
+  News: "#news"
+  Publications: "#publications"
+  Education: "#education"
+
+navbar-extra: 
+ - navbar-extra.html
 
 twitter_username: jekyllrb
 github_username:  umbertocappellazzo

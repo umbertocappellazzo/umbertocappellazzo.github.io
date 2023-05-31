@@ -3,20 +3,18 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: home
+css: "/assets/css/style.css"
 ---
-
 PhD student @ UniTn on CL for audio and speech
-
-[News](/#news)
-[Publications](/#publications)
-[Education](/#education)
 
 Howdy! I'm Umberto Cappellazzo, a second-year PhD student at the University of Trento, Italy, advised by Daniele Falavigna and Alessio Brutti. I'm a member of the [SpeechTek](https://speechtek.fbk.eu/) group at Fondazione Bruno Kessler (FBK), Trento. My research activity lies at the intersection of **Continual Learning** (CL) and **speech-related** tasks, such as _Spoken Language Understanding_ (SLU) and _Automatic Speech Recognition_ (ASR). Currently, I'm focusing on how to mitigate catastrophic forgetting (the tendency of deep NNs to fit the current data distribution to the detriment of the previous acquired knowledge) for seq2seq enc-dec joint SLU/ASR models, as well as studying how forgetting impacts on multi-modal scenarios (e.g., audio-text and audio-vision).
 
-[![](/assets/img/email_icon.png)](mailto:umbertocappellazzo@gmail.com)
-[![](/assets/img/linkedin_icon.png)](https://www.linkedin.com/in/umberto-cappellazzo-116093150/")
-[![](/assets/img/google_scholar_icon.png)](https://scholar.google.com/citations?user=z7zK5S0AAAAJ&hl=en)
-[![](/assets/img/github_icon.png)](https://github.com/umbertocappellazzo)
+<div class="icon">
+  <a href="mailto:umbertocappellazzo@gmail.com"><img src="/assets/img/email_icon.png"></a>
+  <a href="https://www.linkedin.com/in/umberto-cappellazzo-116093150/"><img src="/assets/img/linkedin_icon.png"></a>
+  <a href="https://scholar.google.com/citations?user=z7zK5S0AAAAJ&hl=en"><img src="/assets/img/google_scholar_icon.png"></a>
+  <a href="https://github.com/umbertocappellazzo"><img src="/assets/img/github_icon.png"></a>
+</div>
 
 # News
 
@@ -58,12 +56,14 @@ INTERSPEECH 2023
   **Supervisors**: Daniele Falavigna, Alessio Brutti
 
 <!-- - ![](./images/logo_unipd.png) M.S. in Telecommunication Engineering   -->
--  University of Padova, Padova, Italy  
+
+- University of Padova, Padova, Italy  
   2016-2019  
   **Thesis title**: _A Deep Learning-Based ECG Delineator: Evaluation and Comparison on Standard Databases_  
   **Supervisors**: Michele Rossi, Matteo Gadaleta
 
 <!-- - ![](./images/logo_unipd.png) B.S. in Information Engineering   -->
+
 - University of Padova, Padova, Italy  
   2013-2016
 
