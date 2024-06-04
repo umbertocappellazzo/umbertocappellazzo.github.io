@@ -80,16 +80,20 @@ li{
 
 <ul>
               <li>
-                <b> 22/04/2023.</b> 
-                Excited to announce that on April 22 I gave a talk @ University of Cambridge for the CUED Speech Group Seminars. The title of the talk is "Parameter-Efficient Fine-tuning for Audio and Speech Processing". The The first part of the talk investigates the use of PEFT methods (e.g., LoRA, adapters, prompt-tuning) for audio and speech downstream tasks, with a focus on the efficient adaptation of the Audio Spectrogram Transformer. In the second part I presented two recent works of mine to boost PEFT performance based on Soft Mixture of Adapters and new ad-hoc adapter designs. 
+                <b> 04/06/2024.</b> 
+                So glad to announce the recent acceptance of <u>three</u> papers of mine &#128640 &#128640 &#128640!  <b>1)</b> "<a href="/#continual_contrastive">Continual Contrastive Spoken Language Understanding</a>" has been accepted to <mark style="background-color: #EE82EE;">ACL Findings 2024</mark>! <b>2)</b> "<a href="/#soft_moa">Efficient Fine-tuning of Audio Spectrogram Transformers via Soft Mixture of Adapters"</a> and <b>3)</b> "<a href="/#towards_unified">Towards Unified Evaluation of Continual Learning in Spoken Language Understanding"</a> (the camera-ready version will be soon released) have been accepted to <mark style="background-color: #66CDAA;">Interspeech 2024!</mark>
               </li>
               <li>
-                <b> 20/02/2023.</b> 
-                &#128227 &#128227 Excited to announce that I've officially joined the department of computing at Imperial College London, London for a 3-months visiting period &#128640. I'll be exploring the use of LLMs for audio-visual speech recognition &#128293. I'm fortunate to be advised by Stavros Petridis and Pingchuan Ma from Meta AI.
+                <b> 22/04/2024.</b> 
+                Excited to announce that on April 22 I gave a talk @ University of Cambridge for the CUED Speech Group Seminars. The title of the talk is "Parameter-Efficient Fine-tuning for Audio and Speech Processing". The first part of the talk investigates the use of PEFT methods (e.g., LoRA, adapters, prompt-tuning) for audio and speech downstream tasks, with a focus on the efficient adaptation of the Audio Spectrogram Transformer. In the second part I presented two recent works of mine to boost PEFT performance based on Soft Mixture of Adapters and new ad-hoc adapter designs. 
+              </li>
+              <li>
+                <b> 20/02/2024.</b> 
+                &#128227 &#128227 Excited to announce that I've officially joined the department of computing at Imperial College London, London as a Visiting PhD researcher &#128640. I'll be exploring the use of LLMs for audio-visual speech recognition &#128293. I'm fortunate to be advised by Stavros Petridis and Pingchuan Ma from Meta AI.
               </li>
 
               <li>
-                <b> 02/02/2023.</b> 
+                <b> 02/02/2024.</b> 
                 Excited to share a new pre-print: <i><b>Efficient Fine-tuning of Audio Spectrogram Transformers via Soft Mixture of Adapters</b></i>. In this <a href="https://arxiv.org/abs/2402.00828" target="_blank">paper</a> we propose the use of <b><mark style="background-color: #FF4500;">Soft-MoA</mark></b> for the efficient fine-tuning of the AST model, leveraging a recent approach by Google DeepMind (Soft MoE). We test Soft-MoA in 4 audio and speech benchmarks, showcasing that it attains competitive performance with respect to the dense counterpart, while drastically trimming down the computational cost. We also demonstrate that Soft-MoA outperforms the single adapter approach. We finally perform multiple ablation studies on pivotal aspects of Soft-MoA. This paper is the second paper of a trilogy &#127916: the first <a href="/#PETL">paper</a> provides a birds's eye overview of PETL methods for AST, while the third and last one will be released in the next few months, so get ready for the last chapter! &#128378 
 
 
@@ -130,7 +134,7 @@ li{
 <div>
       <img class="img-fluid" src="./images/coconut.jpeg", width="300" height="100">
       <div class="portfolio_text">
-        <div class="paper_title" style="font-family:'Comic Sans MS'"><i>Continual Contrastive Spoken Language Understanding</i></div>
+        <div class="paper_title" style="font-family:'Comic Sans MS'" id="continual_contrastive"><i>Continual Contrastive Spoken Language Understanding</i></div>
         <div class="authors"><strong>U. Cappellazzo</strong>, E. Fini, M. Yang, D. Falavigna, A. Brutti, B. Raj
         </div>
         <div class="submission_info">
@@ -143,14 +147,33 @@ li{
 </div>
 
 <br>
+
+<div>
+      <img class="img-fluid" src="./images/MoA.png", width="300" height="110">
+      <div class="portfolio_text">
+        <div class="paper_title" style="font-family:'Comic Sans MS'" id="soft_moa"><i>Efficient Fine-tuning of Audio Spectrogram Transformers via Soft Mixture of Adapters</i></div>
+        <div class="authors"><strong>U. Cappellazzo</strong>, D. Falavigna, A. Brutti
+        </div>
+        <div class="submission_info">
+          <mark style="background-color: #66CDAA;">Interspeech, 2024</mark>
+        </div>
+        <div class="link">
+          <a href="https://arxiv.org/abs/2402.00828">Paper</a>
+          <a href="https://github.com/umbertocappellazzo/PETL_AST">Code</a>&emsp;
+        </div>
+      </div>
+</div>
+
+
+<br>
 <div>
       <img class="img-fluid" src="./images/new_index.png", width="200" height="192">
       <div class="portfolio_text">
-        <div class="paper_title" style="font-family:'Comic Sans MS'"><i>Evaluating and Improving Continual Learning in Spoken Language Understanding</i></div>
+        <div class="paper_title" style="font-family:'Comic Sans MS'" id="towards_unified"><i>Evaluating and Improving Continual Learning in Spoken Language Understanding</i></div>
         <div class="authors">M. Yang, X. Li, <strong>U. Cappellazzo</strong>, S. Watanabe, B. Raj
         </div>
         <div class="submission_info">
-          <mark style="background-color:#F5BC17 ;">arxiv preprint, 2024</mark>
+          <mark style="background-color:#66CDAA ;">Interspeech, 2024</mark>
         </div>
         <div class="link">
           <a href="https://arxiv.org/abs/2402.10427">Paper</a>
@@ -180,22 +203,6 @@ li{
 
 <br>
 <br>
-<br>
-<div>
-      <img class="img-fluid" src="./images/MoA.png", width="300" height="110">
-      <div class="portfolio_text">
-        <div class="paper_title" style="font-family:'Comic Sans MS'"><i>Efficient Fine-tuning of Audio Spectrogram Transformers via Soft Mixture of Adapters</i></div>
-        <div class="authors"><strong>U. Cappellazzo</strong>, D. Falavigna, A. Brutti
-        </div>
-        <div class="submission_info">
-          <mark style="background-color: #F5BC17;">arxiv preprint, 2024</mark>
-        </div>
-        <div class="link">
-          <a href="https://arxiv.org/abs/2402.00828">Paper</a>
-          <a href="https://github.com/umbertocappellazzo/PETL_AST">Code</a>&emsp;
-        </div>
-      </div>
-</div>
 
 <br>
 <div id="PETL">
