@@ -66,7 +66,7 @@ li{
 
 <div class="sample-text">
     <span>
-    Howdy! I'm Umberto Cappellazzo, and I work as a Research Associate in the Department of Computing at Imperial College London, UK. I'm a member of the iBUG group led by Maja Pantic and am fortunate to be advised by Stavros Petridis. <i>My research centers on advancing audio-visual speech recognition through Multimodal Large Language Models, in close collaboration with Meta AI</i>. <b>These efforts have resulted in four peer-reviewed publications (ICASSP 2025, Interspeech 2025, ASRU 2025, NeurIPS 2025) and two additional papers currently under review</b>. Previously, I obtained my PhD in Information Engineering and Computer Science from the University of Trento, Italy. During my PhD, I explored diverse topics, including continual learning for speech processing, parameter-efficient fine-tuning techniques (e.g, adapters, LoRA) for audio/speech tasks, and Multimodal LLMs for audio-visual speech recognition, leading to nine publications in top-notch conferences. During the final year of my PhD, I spent nine months as a visiting researcher with the iBUG team at Imperial. 
+    Howdy! I'm Umberto Cappellazzo, and I work as a Research Associate in the Department of Computing at Imperial College London, UK. I'm a member of the iBUG group led by Maja Pantic and am fortunate to be advised by Stavros Petridis. <i>My research centers on advancing audio-visual speech recognition through Multimodal Large Language Models, in close collaboration with Meta AI</i>. <b>These efforts have resulted in six peer-reviewed publications (IEEE ICASSP 2025, Interspeech 2025, IEEE ASRU 2025, NeurIPS 2025, 2x IEEE ICASSP 2026)</b>. Previously, I obtained my PhD in Information Engineering and Computer Science from the University of Trento, Italy. During my PhD, I explored diverse topics, including continual learning for speech processing, parameter-efficient fine-tuning techniques (e.g, adapters, LoRA) for audio/speech tasks, and Multimodal LLMs for audio-visual speech recognition, leading to nine publications in top-notch conferences. During the final year of my PhD, I spent nine months as a visiting researcher with the iBUG team at Imperial. 
 
   
     </span>
@@ -82,6 +82,12 @@ li{
 <h2 id="news">News</h2>
 
 <ul>
+              <li>
+                <b> 17/01/2026.</b> 
+                I'm thrilled to announce that both my summer projects I worked on have been accepted for publication at IEEE ICASSP 2026! <b>1)</b> "<span style="font-family:'Comic Sans MS'">Omni-AVSR: Towards Unified Multimodal Speech Recognition with Large Language Models</span>". Omni-AVSR is an audio-visual LLM designed to support the tasks of Auditory/Visual/Audio-Visual Speech Recognition with a single unified model. Furthermore, Omni-AVSR supports elastic inference via an optimized matryoshka🪆representation learning such that the user can modulate the audio and visual granularity based on its resource constraints. Omni-AVSR achieves comparable or superior accuracy to state-of-the-art methods on multiple benchmarks while training a single model at substantially lower training and deployment cost. Along with the <a href="https://arxiv.org/abs/2511.07253" target="_blank">paper</a>, we also provide the code and checkpoints <a href="https://github.com/umbertocappellazzo/Omni-AVSR" target="_blank">here</a>. More information can be accessed in the dedicated project <a href="https://umbertocappellazzo.github.io/Omni-AVSR" target="_blank">website</a>! <b>2)</b> "<span style="font-family:'Comic Sans MS'">Mitigating Attention Sinks and Massive Activations in Audio-Visual Speech Recognition with LLMs</span>". In this paper, we explore two phenomena in audio-visual LLMs: 1) attention sinks, which are tokens that attract disproportionately high attention, and 2) associated massive activations in which some features of sink tokens exhibit huge activation in LLMs. We found that attention sinks and massive activations are present not only at the BOS token but also at intermediate low-semantic tokens across ASR, VSR, and AVSR tasks. We also show that massive activations originate in the MLP layers and correspond to fixed feature indices, with sink tokens exhibiting high cosine similarity to the BOS token. Building on these insights, we introduce a simple decorrelation loss that reduces cosine similarity between BOS and other tokens, effectively mitigating attention sinks and massive activations, while improving WERs under high audio-visual feature downsampling while remaining stable at lower downsampling rates. More information can be found in our <a href="https://arxiv.org/abs/2510.22603" target="_blank">paper</a>, and obviously our <a href="https://github.com/umbertocappellazzo/Llama-AVSR" target="_blank">code</a> is also publicily available!
+                
+              </li>
+
               <li>
                 <b> 19/09/2025.</b> 
                 I'm super excited to share that our paper "<a href="/#MoME"><span style="font-family:'Comic Sans MS'">MoME: Mixture of Matryoshka Experts for Audio-Visual Speech Recognition</span>"</a> has been accepted to <b><mark style="background-color: #FFF0F5;">NeurIPS 2025</mark></b>! The camera-ready version is available <a href="https://arxiv.org/abs/2510.04136v1" target="_blank">here</a>. We introduce <i>Mixture of Matryoshka Experts</i> (MoME), which unifies Matryoshka Representation Learning with sparse Mixture-of-Experts for AVSR. MoME augments frozen LLMs with top-k routed and shared experts, enabling dynamic capacity allocation across modalities and granularities while capturing global, cross-modal, and scale-invariant knowledge.
@@ -190,24 +196,6 @@ li{
 <br>
 
 <div id="PETL">
-      <img class="img-fluid" src="./images/MoME.png", width="291" height="119">
-      <div class="portfolio_text">
-        <div class="paper_title" style="font-family:'Comic Sans MS'" id="MoME"><i>MoME: Mixture of Matryoshka Experts for Audio-Visual Speech Recognition</i></div>
-        <div class="authors"><strong>U. Cappellazzo</strong>, M. Kim, P. Ma, H. Chen, X. Liu, S. Petridis, M. Pantic
-        </div>
-        <div class="submission_info">
-          <mark style="background-color: #FFF0F5;">NeurIPS 2025</mark>
-        </div>
-        <div class="link">
-          <a href="https://arxiv.org/abs/2510.04136v1">Paper</a>
-          <a href="https://openreview.net/forum?id=n6SrVj7I0g">OpenReview</a>&emsp;
-        </div>
-      </div>
-</div>
-
-<br>
-
-<div id="PETL">
       <img class="img-fluid" src="./images/Omni-AVSR.png", width="291" height="119">
       <div class="portfolio_text">
         <div class="paper_title" style="font-family:'Comic Sans MS'" id="Omni-AVSR"><i>Omni-AVSR: Towards Unified Multimodal Speech Recognition with Large Language Models
@@ -215,7 +203,7 @@ li{
         <div class="authors"><strong>U. Cappellazzo</strong>, X. Liu, P. Ma, S. Petridis, M. Pantic
         </div>
         <div class="submission_info">
-          <mark style="background-color: #9ACD32;">In peer-review</mark>
+          <mark style="background-color: #9ACD32;">IEEE ICASSP 2026</mark>
         </div>
         <div class="link">
           <a href="https://arxiv.org/abs/2511.07253">Paper</a>
@@ -235,11 +223,30 @@ li{
         <div class="authors">Anand, <strong>U. Cappellazzo</strong>, S. Petridis, M. Pantic
         </div>
         <div class="submission_info">
-          <mark style="background-color: #9ACD32;">In peer-review</mark>
+          <mark style="background-color: #9ACD32;">IEEE ICASSP 2026</mark>
         </div>
         <div class="link">
           <a href="https://arxiv.org/abs/2510.22603">Paper</a>
           <a href="https://github.com/umbertocappellazzo/Llama-AVSR">Code</a>&emsp;
+        </div>
+      </div>
+</div>
+
+<br>
+
+
+<div id="PETL">
+      <img class="img-fluid" src="./images/MoME.png", width="291" height="119">
+      <div class="portfolio_text">
+        <div class="paper_title" style="font-family:'Comic Sans MS'" id="MoME"><i>MoME: Mixture of Matryoshka Experts for Audio-Visual Speech Recognition</i></div>
+        <div class="authors"><strong>U. Cappellazzo</strong>, M. Kim, P. Ma, H. Chen, X. Liu, S. Petridis, M. Pantic
+        </div>
+        <div class="submission_info">
+          <mark style="background-color: #FFF0F5;">NeurIPS 2025</mark>
+        </div>
+        <div class="link">
+          <a href="https://arxiv.org/abs/2510.04136v1">Paper</a>
+          <a href="https://openreview.net/forum?id=n6SrVj7I0g">OpenReview</a>&emsp;
         </div>
       </div>
 </div>
@@ -288,7 +295,7 @@ li{
         <div class="authors"><strong>U. Cappellazzo</strong>, M. Kim, H. Chen, P. Ma, S. Petridis, D. Falavigna, A. Brutti, M. Pantic
         </div>
         <div class="submission_info">
-          <mark style="background-color: #FF7F50;">ICASSP 2025</mark>
+          <mark style="background-color: #FF7F50;"> IEEE ICASSP 2025</mark>
         </div>
         <div class="link">
           <a href="https://arxiv.org/abs/2409.12319">Paper</a>
@@ -385,7 +392,7 @@ li{
         <div class="authors">M. Yang, <strong>U. Cappellazzo</strong>, X. Li, S. Watanabe, B. Raj
         </div>
         <div class="submission_info">
-          <mark style="background-color: #87CEEB;">ICASSP 2024</mark>
+          <mark style="background-color: #87CEEB;">IEEE ICASSP 2024</mark>
         </div>
         <div class="link">
           <a href="https://ieeexplore.ieee.org/abstract/document/10446846">Paper</a>
@@ -404,7 +411,7 @@ li{
         <div class="authors"> G. A. Wright, <strong>U. Cappellazzo</strong>, S. Zaiem, D. Raj, L. Ondel Yang,  D. Falavigna, M. Ali, A. Brutti
         </div>
         <div class="submission_info">
-          <mark style="background-color: #FFEBCD;">Self-supervision in Audio, Speech and Beyond Workshop, ICASSP 2024</mark>
+          <mark style="background-color: #FFEBCD;">Self-supervision in Audio, Speech and Beyond Workshop, IEEE ICASSP 2024</mark>
         </div>
         <div class="link">
           <a href="https://arxiv.org/abs/2309.09546">Paper</a>&emsp;
