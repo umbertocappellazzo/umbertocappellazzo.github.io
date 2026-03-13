@@ -81,7 +81,13 @@ li{
 
 <h2 id="news">News</h2>
 
-<ul>
+<ul>          
+              <li>
+                <b> 13/03/2026.</b> 
+                <b>How do speech recognition models balance what they hear and what they see?</b> This is the fundamental question to try to answer in our new paper: <span style="font-family:'Comic Sans MS'">Dr. SHAP-AV: Decoding Relative Modality Contributions via Shapley Attribution in Audio-Visual Speech Recognition</span>". Dr. SHAP-AV is the first comprehensive study analyzing modality contributions in AVSR from multiple perspectives and at scale — across 6 state-of-the-art models, 2 benchmarks, varying noise conditions, and three complementary levels of analysis: Global SHAP, Generative SHAP, and Temporal Alignment SHAP. Our findings expose a persistent audio bias and reveal how different architectures respond to degraded inputs, insights that would remain hidden if we only looked at WER. More information can be found in our: <b>1)</b> <a href="https://umbertocappellazzo.github.io/Dr-SHAP-AV/" target="_blank">project page</a>, <b>2)</b> <a href="https://arxiv.org/pdf/2603.12046" target="_blank">paper</a>, and <b>3)</b> <a href="https://github.com/umbertocappellazzo/Dr-SHAP-AV/" target="_blank">code</a>.
+                
+              </li>
+
               <li>
                 <b> 17/01/2026.</b> 
                 I'm thrilled to announce that both my summer projects I worked on have been accepted for publication at IEEE ICASSP 2026! <b>1)</b> "<span style="font-family:'Comic Sans MS'">Omni-AVSR: Towards Unified Multimodal Speech Recognition with Large Language Models</span>". Omni-AVSR is an audio-visual LLM designed to support the tasks of Auditory/Visual/Audio-Visual Speech Recognition with a single unified model. Furthermore, Omni-AVSR supports elastic inference via an optimized matryoshka🪆representation learning such that the user can modulate the audio and visual granularity based on its resource constraints. Omni-AVSR achieves comparable or superior accuracy to state-of-the-art methods on multiple benchmarks while training a single model at substantially lower training and deployment cost. Along with the <a href="https://arxiv.org/abs/2511.07253" target="_blank">paper</a>, we also provide the code and checkpoints <a href="https://github.com/umbertocappellazzo/Omni-AVSR" target="_blank">here</a>. More information can be accessed in the dedicated project <a href="https://umbertocappellazzo.github.io/Omni-AVSR" target="_blank">website</a>! <b>2)</b> "<span style="font-family:'Comic Sans MS'">Mitigating Attention Sinks and Massive Activations in Audio-Visual Speech Recognition with LLMs</span>". In this paper, we explore two phenomena in audio-visual LLMs: 1) attention sinks, which are tokens that attract disproportionately high attention, and 2) associated massive activations in which some features of sink tokens exhibit huge activation in LLMs. We found that attention sinks and massive activations are present not only at the BOS token but also at intermediate low-semantic tokens across ASR, VSR, and AVSR tasks. We also show that massive activations originate in the MLP layers and correspond to fixed feature indices, with sink tokens exhibiting high cosine similarity to the BOS token. Building on these insights, we introduce a simple decorrelation loss that reduces cosine similarity between BOS and other tokens, effectively mitigating attention sinks and massive activations, while improving WERs under high audio-visual feature downsampling while remaining stable at lower downsampling rates. More information can be found in our <a href="https://arxiv.org/abs/2510.22603" target="_blank">paper</a>, and obviously our <a href="https://github.com/umbertocappellazzo/Llama-AVSR" target="_blank">code</a> is also publicily available!
@@ -192,6 +198,28 @@ li{
 
 
 <h2 id="publications">Publications</h2>
+
+
+<br>
+
+<div id="PETL">
+      <img class="img-fluid" src="./images/SHAP_main_diagram.png", width="300" height="129">
+      <div class="portfolio_text">
+        <div class="paper_title" style="font-family:'Comic Sans MS'" id="Sinks"><i>Dr. SHAP-AV: Decoding Relative Modality Contributions via Shapley
+          Attribution in Audio-Visual Speech Recognition
+        </i></div>
+        <div class="authors"><strong>U. Cappellazzo</strong>, S. Petridis, M. Pantic
+        </div>
+        <div class="submission_info">
+          <mark style="background-color: #DAA520;">Under review</mark>
+        </div>
+        <div class="link">
+          <a href="https://umbertocappellazzo.github.io/Dr-SHAP-AV">Website</a>
+          <a href="https://arxiv.org/abs/2603.12046">Paper</a>
+          <a href="https://github.com/umbertocappellazzo/Dr-SHAP-AV">Code</a>&emsp;
+        </div>
+      </div>
+</div>
 
 <br>
 
