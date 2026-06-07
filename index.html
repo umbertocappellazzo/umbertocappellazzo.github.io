@@ -1,591 +1,263 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Umberto Cappellazzo</title>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Umberto Cappellazzo — AI Researcher · Audio-Visual Speech &amp; Multimodal LLMs</title>
+  <meta name="author" content="Umberto Cappellazzo" />
+  <meta name="description" content="Umberto Cappellazzo — Research Associate at Imperial College London working on self-supervised audio representation learning, speech tokenizers, and multimodal LLMs for audio-visual speech recognition." />
+  <meta property="og:image" content="./images/Profile_picture.jpeg" />
+  <link rel="shortcut icon" type="image/x-icon" href="/images/image.ico" />
 
-        <meta charset="utf-8" />
-    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:ital,wght@0,400;0,700;0,800;0,900;1,700&display=swap" rel="stylesheet">
 
-    
-    <meta name="description" content="PhD @ UniTn, CL for audio and speech">
-    <meta property="og:description" content="PhD @ UniTn, CL for audio and speech"/>
-    
-    <meta name="author" content="Umberto Cappellazzo" />
+  <style>
+    :root{
+      --ink:      #3a2a20;   /* deep warm brown (lines + text) */
+      --paper:    #fbf3e4;   /* warm cream */
+      --paper-2:  #f3e7d2;   /* deeper cream panel */
+      --line:     #3a2a20;
+      --accent:   #e07a3f;   /* warm terracotta */
+      --accent-2: #d8a23a;   /* mustard / honey */
+      --maxw:     1080px;
+      --shadow:   6px 6px 0 var(--ink);
+      --shadow-sm:4px 4px 0 var(--ink);
+      --disp:     "Bangers", system-ui, sans-serif;
+      --body:     "Nunito", system-ui, sans-serif;
+    }
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0; background:var(--paper); color:var(--ink);
+      font-family:var(--body); font-weight:700; line-height:1.55;
+      /* halftone dot texture */
+      background-image:
+        radial-gradient(rgba(224,122,63,.28) 1px, transparent 1.4px);
+      background-size:22px 22px;
+      background-attachment:fixed;
+    }
+    body::before{
+      content:""; position:fixed; inset:0; background:var(--paper); opacity:.85; z-index:-1;
+    }
+    a{ color:inherit; text-decoration:none; }
+    img{ max-width:100%; display:block; }
+    ::selection{ background:var(--accent); color:#fff; }
+    .wrap{ max-width:var(--maxw); margin:0 auto; padding:0 22px; }
 
-  
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="/images/image.ico"/>
+    /* speed-line divider */
+    .speed{ height:26px; background:repeating-linear-gradient(90deg, var(--ink) 0 3px, transparent 3px 9px); opacity:.85; }
 
-    <style>
+    /* NAV */
+    header.nav{ position:sticky; top:0; z-index:50; background:var(--ink); color:var(--paper); border-bottom:4px solid var(--ink); }
+    .nav-inner{ display:flex; align-items:center; gap:16px; height:62px; }
+    .brand{ display:flex; align-items:center; gap:11px; }
+    .brand img{ width:36px; height:36px; border-radius:50%; object-fit:cover; border:3px solid var(--paper); }
+    .brand .nm{ font-family:var(--disp); font-size:24px; letter-spacing:1.5px; }
+    .nav-links{ margin-left:auto; display:flex; gap:4px; flex-wrap:wrap; }
+    .nav-links a{ padding:7px 12px; font-size:14px; font-weight:800; text-transform:uppercase; letter-spacing:.5px; border:2px solid transparent; transition:.12s; }
+    .nav-links a:hover{ background:var(--accent); border-color:var(--paper); }
+    .nav-cta{ background:var(--accent); border:2px solid var(--paper)!important; }
 
-mark{
- background-color:#c0ffc8;
-}
+    /* HERO */
+    .hero{ padding:54px 0 40px; }
+    .hero-inner{ max-width:760px; }
+    .eyebrow{ display:inline-block; background:var(--ink); color:var(--paper); font-family:var(--disp);
+      letter-spacing:2px; font-size:18px; padding:5px 16px; transform:rotate(-2deg); box-shadow:var(--shadow-sm); margin-bottom:20px; }
+    h1.head{ font-family:var(--disp); font-size:clamp(48px,8vw,86px); line-height:.95; letter-spacing:2px; margin:0 0 18px;
+      text-shadow:4px 4px 0 var(--accent); }
+    .lede{ font-size:17.5px; font-weight:700; max-width:64ch; margin:0 0 26px; }
+    .lede b{ background:var(--accent); color:#fff; padding:0 5px; }
+    .btn-row{ display:flex; gap:12px; flex-wrap:wrap; }
+    .btn{ display:inline-flex; align-items:center; gap:8px; padding:11px 20px; font-family:var(--disp);
+      letter-spacing:1.5px; font-size:18px; border:3px solid var(--ink); box-shadow:var(--shadow-sm); transition:.12s; background:var(--paper); }
+    .btn.primary{ background:var(--accent); color:#fff; }
+    .btn:hover{ transform:translate(2px,2px); box-shadow:2px 2px 0 var(--ink); }
+    .stats{ display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:34px; }
+    .stat{ background:var(--paper); border:3px solid var(--ink); box-shadow:var(--shadow-sm); padding:14px; text-align:center; }
+    .stat .n{ font-family:var(--disp); font-size:30px; color:var(--accent); letter-spacing:1px; }
+    .stat .l{ font-size:12px; font-weight:800; text-transform:uppercase; }
 
-.border-highlight{
-  border:2px dashed red;  
-  padding:0.03em 0.25em;
-}
+    /* SECTIONS */
+    section{ padding:56px 0; }
+    .kicker{ font-family:var(--disp); font-size:20px; letter-spacing:2px; color:var(--accent); }
+    h2.sec{ font-family:var(--disp); font-size:clamp(34px,5vw,52px); letter-spacing:1.5px; margin:2px 0 12px;
+      text-shadow:3px 3px 0 rgba(0,0,0,.12); }
+    .sec-sub{ max-width:68ch; margin:0 0 34px; font-size:16px; font-weight:700; }
 
-li{
-  margin: 10px 0;
-}
-    </style>
+    /* RESEARCH CARDS — panels */
+    .grid-3{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+    .card{ background:var(--paper); border:3px solid var(--ink); box-shadow:var(--shadow-sm); padding:20px; transition:.14s; }
+    .card:nth-child(even){ background:var(--paper-2); }
+    .card:hover{ transform:translate(-2px,-3px); box-shadow:8px 9px 0 var(--ink); }
+    .card .ico{ font-size:30px; width:54px; height:54px; display:grid; place-items:center; border:3px solid var(--ink);
+      background:var(--accent); margin-bottom:14px; box-shadow:var(--shadow-sm); }
+    .card h3{ font-family:var(--disp); font-size:23px; letter-spacing:1px; margin:0 0 8px; }
+    .card p{ font-size:14px; font-weight:700; margin:0 0 14px; }
+    .tags{ display:flex; flex-wrap:wrap; gap:6px; }
+    .tag{ font-size:11px; font-weight:900; text-transform:uppercase; border:2px solid var(--ink); padding:2px 8px; }
 
-  </head>
+    /* TIMELINE */
+    .timeline{ position:relative; padding-left:30px; }
+    .timeline::before{ content:""; position:absolute; left:8px; top:8px; bottom:8px; width:4px; background:var(--ink); }
+    .tl-item{ position:relative; margin-bottom:24px; background:var(--paper); border:3px solid var(--ink); box-shadow:var(--shadow-sm); padding:16px 18px; }
+    .tl-item::before{ content:""; position:absolute; left:-30px; top:18px; width:16px; height:16px; background:var(--accent); border:3px solid var(--ink); border-radius:50%; }
+    .tl-date{ font-family:var(--disp); font-size:18px; letter-spacing:1px; color:var(--accent); }
+    .tl-item h4{ font-family:var(--disp); font-size:21px; letter-spacing:.6px; margin:3px 0 6px; }
+    .tl-item p{ margin:0; font-size:14px; font-weight:700; }
+    .tl-item a{ border-bottom:2px solid var(--accent); }
 
-  <body>
-    <div class="wrapper-masthead">
-      <div class="container">
+    /* PUBLICATIONS */
+    .pub-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+    .pub{ background:var(--paper); border:3px solid var(--ink); box-shadow:var(--shadow-sm); padding:0; transition:.14s; display:flex; flex-direction:column; overflow:hidden; }
+    .pub:hover{ transform:translate(-2px,-3px); box-shadow:8px 9px 0 var(--ink); }
+    .pub-thumb{ border-bottom:3px solid var(--ink); background:#fff; display:grid; place-items:center; padding:14px; }
+    .pub-thumb img{ max-height:150px; width:auto; }
+    .pub-body{ padding:16px 18px; display:flex; flex-direction:column; flex:1; }
+    .pub .venue{ align-self:flex-start; font-family:var(--disp); font-size:15px; letter-spacing:1px; padding:2px 11px; margin-bottom:10px;
+      border:2px solid var(--ink); background:var(--accent); color:#fff; }
+    .pub h3{ font-size:16px; font-weight:900; line-height:1.3; margin:0 0 7px; }
+    .pub .auth{ font-size:13px; font-weight:700; color:#444; margin:0 0 14px; }
+    .pub .auth b{ color:var(--ink); background:#ffe27a; padding:0 3px; }
+    .pub .links{ margin-top:auto; display:flex; flex-wrap:wrap; gap:8px; }
+    .pub .links a{ font-size:12px; font-weight:900; text-transform:uppercase; padding:5px 11px; border:2px solid var(--ink); transition:.12s; }
+    .pub .links a:hover{ background:var(--ink); color:var(--paper); }
 
-        <header class="masthead clearfix">
+    /* NEWS */
+    .news{ display:grid; grid-template-columns:130px 1fr; gap:18px; padding:16px; border:3px solid var(--ink); background:var(--paper); box-shadow:var(--shadow-sm); margin-bottom:14px; }
+    .news .date{ font-family:var(--disp); font-size:19px; letter-spacing:1px; color:var(--accent); }
+    .news .body{ font-size:14.5px; font-weight:700; }
+    .news .body b{ background:#ffe27a; padding:0 3px; }
+    .news .body a{ border-bottom:2px solid var(--accent); }
 
-          <div class="site-info">
-            <h1 class="site-name"><a href="/">Umberto Cappellazzo</a></h1>
-            <p class="site-description">Research Associate @ Imperial College London.</p>
-          </div>
+    /* CONTACT */
+    .contact-card{ background:var(--ink); color:var(--paper); border:3px solid var(--ink); box-shadow:var(--shadow); padding:36px; }
+    .contact-card b{ background:var(--accent); padding:0 5px; }
+    .social{ display:flex; flex-wrap:wrap; gap:12px; margin-top:22px; }
+    .social a{ font-family:var(--disp); font-size:18px; letter-spacing:1px; padding:9px 16px; border:3px solid var(--paper); transition:.12s; }
+    .social a:hover{ background:var(--accent); }
+    footer.foot{ background:var(--ink); color:var(--paper); text-align:center; padding:22px; font-family:var(--disp); letter-spacing:2px; font-size:18px; }
 
+    @media(max-width:860px){ .grid-3{ grid-template-columns:1fr 1fr; } .pub-grid{ grid-template-columns:1fr; } }
+    @media(max-width:600px){ .nav-links{ display:none; } .grid-3{ grid-template-columns:1fr; } .stats{ grid-template-columns:1fr 1fr; } .news{ grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <a id="top"></a>
+  <header class="nav"><div class="wrap nav-inner">
+    <a class="brand" href="#top"><img src="./images/Profile_picture.jpeg" alt="Umberto"><span class="nm">Umberto Cappellazzo</span></a>
+    <nav class="nav-links">
+      <a href="#research">Research</a><a href="#bio">Bio</a><a href="#publications">Papers</a>
+      <a href="#news">News</a><a href="#contact">Contact</a><a class="nav-cta" href="CV/Resume.pdf">CV</a>
+    </nav>
+  </div></header>
+  <div class="speed"></div>
 
-          <nav>
-            <a href="/#news">News</a>
-            <a href="/#publications">Publications</a>
-            <a href="/#work_experience">Work Experience</a>
-            <a href="/#education">Education</a>
-            <a href="CV/Resume.pdf">CV</a>
-          </nav>
-        </header>
-
+  <!-- HERO -->
+  <section class="hero"><div class="wrap">
+    <div class="hero-inner">
+      <span class="eyebrow">AI Researcher · Audio &amp; Speech</span>
+      <p class="lede">I'm <b>Umberto Cappellazzo</b>, and I work as a Research Associate in the Department of Computing at <b>Imperial College London</b>, UK. I'm a member of the iBUG group led by Maja Pantic and am fortunate to be advised by Stavros Petridis. I'm currently working on self-supervised audio representation learning, speech tokenizers, and multimodal LLMs. In particular, I've mainly focused on advancing audio-visual speech recognition through Large Language Models, in close collaboration with Meta AI. I've published several papers along this direction (IEEE ICASSP x3, Interspeech x3, IEEE ASRU, NeurIPS). Previously, I obtained my PhD in Information Engineering and Computer Science from the University of Trento, Italy.
+      <div class="btn-row">
+        <a class="btn primary" href="#publications">Read Papers</a>
+        <a class="btn" href="https://scholar.google.com/citations?user=z7zK5S0AAAAJ&hl=en" target="_blank">Scholar</a>
+        <a class="btn" href="https://github.com/umbertocappellazzo" target="_blank">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/umberto-cappellazzo-116093150/" target="_blank">LinkedIn</a>
+        <a class="btn" href="https://twitter.com/Umberto_Senpai" target="_blank">Twitter</a>
       </div>
     </div>
+  </div></section>
 
-    <div id="main" role="main" class="container">
-      <div class="portfolio_text">
-<img src="./images/Profile_picture.jpeg" alt="Umberto's profile photo" width="45%">
+  <!-- RESEARCH -->
+  <section id="research"><div class="wrap">
+    <h2 class="sec">RESEARCH</h2>
+    <div class="grid-3">
+      <div class="card"><div class="ico">🗣️</div><h3>Audio-Visual Speech Recognition</h3><p>LLM-based AVSR that reads lips and listens at once — state-of-the-art on LRS2/LRS3 via modality-aware compression and LoRA.</p><div class="tags"><span class="tag">Llama-AVSR</span><span class="tag">LRS3</span><span class="tag">Multimodal LLM</span></div></div>
+      <div class="card"><div class="ico">🪆</div><h3>Elastic &amp; Matryoshka Models</h3><p>One model, many granularities. Matryoshka representation learning and Mixture-of-Experts for adaptive inference.</p><div class="tags"><span class="tag">MoME</span><span class="tag">Omni-AVSR</span><span class="tag">Elastic</span></div></div>
+      <div class="card"><div class="ico">🎛️</div><h3>Parameter-Efficient Fine-Tuning</h3><p>Adapters, LoRA, prompt-tuning, and soft Mixture-of-Adapters — matching full fine-tuning at a fraction of the cost.</p><div class="tags"><span class="tag">PEFT</span><span class="tag">Soft-MoA</span><span class="tag">AST</span></div></div>
+      <div class="card"><div class="ico">🌊</div><h3>Self-Supervised Audio Learning</h3><p>Large-scale self-supervised audio pre-training via next-embedding auto-regressive objectives in latent space.</p><div class="tags"><span class="tag">SSL</span><span class="tag">Spectrograms</span><span class="tag">Tokenizers</span></div></div>
+      <div class="card"><div class="ico">🔍</div><h3>Interpreting Multimodal LLMs</h3><p>Probing attention sinks, massive activations, and modality contributions via Shapley attribution.</p><div class="tags"><span class="tag">SHAPLEY VALUES</span><span class="tag">Attention Sinks</span><span class="tag">MASSIVE ACTIVATIONS</span></div></div>
+      <div class="card"><div class="ico">♻️</div><h3>Continual Learning for Speech</h3><p>Learning sequentially without forgetting — rehearsal, distillation, and contrastive objectives for spoken language understanding (SLU).</p><div class="tags"><span class="tag">Continual Learning</span><span class="tag">SLU</span><span class="tag">Distillation</span></div></div>
+    </div>
+  </div></section>
 
-<div class="sample-text">
-    <span>
-    Howdy! I'm Umberto Cappellazzo, and I work as a Research Associate in the Department of Computing at Imperial College London, UK. I'm a member of the iBUG group led by Maja Pantic and am fortunate to be advised by Stavros Petridis. I'm currently working on self-supervised audio representation learning, speech tokenizers, and multimodal LLMs. In particular, I've worked a lot on advancing audio-visual speech recognition through Large Language Models, in close collaboration with Meta AI. I've published several papers along this direction (IEEE ICASSP x3, Interspeech x3, IEEE ASRU, NeurIPS)</b>. Previously, I obtained my PhD in Information Engineering and Computer Science from the University of Trento, Italy. During my PhD, I explored diverse topics, including continual learning for speech processing, parameter-efficient fine-tuning techniques (e.g, adapters, LoRA) for audio/speech tasks, and Multimodal LLMs for audio-visual speech recognition, leading to nine publications in top-notch conferences. During the final year of my PhD, I spent nine months as a visiting researcher with the iBUG team at Imperial. 
+  <!-- BIO -->
+  <section id="bio"><div class="wrap">
+    <h2 class="sec">BIO</h2>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-date">Mar 2025 — present</div><h4>Research Associate · Imperial College London (iBUG team)</h4><p>Advised by Stavros Petridis in the group led by Maja Pantic. Focus on multimodal LLMs and self-supervised audio representation learning.</p></div>
+      <div class="tl-item"><div class="tl-date">Feb 2024 — Nov 2024</div><h4>Visiting Researcher · Imperial College London</h4><p>Nine-month visit with iBUG exploring LLMs for AVSR, advised by Stavros Petridis — the work behind Llama-AVSR.</p></div>
+      <div class="tl-item"><div class="tl-date">Summer 2023</div><h4>JSALT 2023 · Le Mans, France</h4><p>Finite-state methods with modern neural architectures group; early-exit techniques for CTC/MMI.</p></div>
+      <div class="tl-item"><div class="tl-date">Nov 2021 — Jan 2025</div><h4>PhD · University of Trento</h4><p>"Efficient Knowledge Transfer and Adaptation for Speech and Beyond." Defended <i>cum laude</i>, Jan 2025. Supervised by Daniele Falavigna and Alessio Brutti.</p></div>
+      <div class="tl-item"><div class="tl-date">2016 — 2019</div><h4>M.S. Telecommunication Engineering · University of Padova</h4><p>Thesis: deep-learning-based ECG delineator. Supervised by Michele Rossi and Matteo Gadaleta.</p></div>
+      <div class="tl-item"><div class="tl-date">2013 — 2016</div><h4>B.S. Information Engineering · University of Padova</h4><p>Thesis: message authentication over an ideal or noisy channel. Supervised by Nicola Laurenti.</p></div>
+    </div>
+  </div></section>
 
-  
-    </span>
-</div>
-  <div class="icon">
-    <a href="mailto:umbertocappellazzo@gmail.com"><img src="./images/email_icon.png" width="24px"></a>
-    <a href="https://www.linkedin.com/in/umberto-cappellazzo-116093150/"><img src="./images/linkedin_icon.png" width="24px"></a>
-    <a href="https://scholar.google.com/citations?user=z7zK5S0AAAAJ&hl=en"><img src="./images/google_scholar_icon.png" width="24px"></a>
-    <a href="https://github.com/umbertocappellazzo"><img src="./images/github_icon.png" width="24px"></a>
-  </div>
-</div>
+  <!-- PUBLICATIONS -->
+  <section id="publications"><div class="wrap">
+    <h2 class="sec">PUBLICATIONS</h2>
+    <div class="pub-grid">
 
-<h2 id="news">News</h2>
+      <div class="pub"><div class="pub-thumb"><img src="./images/SHAP_main_diagram.png" alt=""></div><div class="pub-body"><span class="venue">Interspeech '26 [Long Paper Track]</span><h3>Dr. SHAP-AV: Decoding Relative Modality Contributions via Shapley Attribution in AVSR</h3><p class="auth"><b>U. Cappellazzo</b>, S. Petridis, M. Pantic</p><div class="links"><a href="https://umbertocappellazzo.github.io/Dr-SHAP-AV" target="_blank">Web</a><a href="https://arxiv.org/abs/2603.12046" target="_blank">Paper</a><a href="https://github.com/umbertocappellazzo/Dr-SHAP-AV" target="_blank">Code</a></div></div></div>
 
-<ul>          
-              <li>
-                <b> 05/06/2026.</b> 
-                I'm excited to share that 3/3 papers submitted to INTERSPEECH have been accepted (1 long track, 2 regular track). The papers are: 1) "<span style="font-family:'Comic Sans MS'"><i>Dr. SHAP-AV: Decoding Relative Modality Contributions via Shapley Attribution in Audio-Visual Speech Recognition</i></span>", <b>U. Cappellazzo</b>, S. Petridis, M. Pantic. 2) "<span style="font-family:'Comic Sans MS'"><i>VIB-AVSR: Variational Information Bottleneck for Noise-Robust LLM-Based Audio-Visual Speech Recognition</i></span>", P. Arora, N. Singh, <b>U. Cappellazzo</b>, S. Petridis, M. Pantic. 3) "<span style="font-family:'Comic Sans MS'"><i>MambAdapter: Lightweight Mamba-Based Adapters for Parameter-Efficient Transfer Learning in Speech and Audio</i></span>", S. Ali, <b>U. Cappellazzo</b>, M. Ravanelli. More details for each paper (pre-print + code) can be found in the <a href="/#publications">Publications</a> section. Look forward to presenting and discussing our paper and having great discussions in Sydney! 🇦🇺🦘🐨
-                
-              </li>
+      <div class="pub"><div class="pub-thumb"><img src="./images/VIB-AVSR.png" alt=""></div><div class="pub-body"><span class="venue">Interspeech '26</span><h3>VIB-AVSR: Variational Information Bottleneck for Noise-Robust LLM-Based AVSR</h3><p class="auth">P. Arora, N. Singh, <b>U. Cappellazzo</b>, S. Petridis, M. Pantic</p><div class="links"><a href="#" target="_blank">Paper</a><a href="#" target="_blank">Code</a></div></div></div>
 
-              <li>
-                <b> 13/03/2026.</b> 
-                <b>How do speech recognition models balance what they hear and what they see?</b> This is the fundamental question to try to answer in our new paper: <span style="font-family:'Comic Sans MS'">Dr. SHAP-AV: Decoding Relative Modality Contributions via Shapley Attribution in Audio-Visual Speech Recognition</span>". Dr. SHAP-AV is the first comprehensive study analyzing modality contributions in AVSR from multiple perspectives and at scale — across 6 state-of-the-art models, 2 benchmarks, varying noise conditions, and three complementary levels of analysis: Global SHAP, Generative SHAP, and Temporal Alignment SHAP. Our findings expose a persistent audio bias and reveal how different architectures respond to degraded inputs, insights that would remain hidden if we only looked at WER. More information can be found in our: <b>1)</b> <a href="https://umbertocappellazzo.github.io/Dr-SHAP-AV/" target="_blank">project page</a>, <b>2)</b> <a href="https://arxiv.org/pdf/2603.12046" target="_blank">paper</a>, and <b>3)</b> <a href="https://github.com/umbertocappellazzo/Dr-SHAP-AV/" target="_blank">code</a>.
-                
-              </li>
+      <div class="pub"><div class="pub-thumb"><img src="./images/Mambadapter.png" alt=""></div><div class="pub-body"><span class="venue">Interspeech '26</span><h3>MambAdapter: Lightweight Mamba-Based Adapters for PEFT in Speech and Audio</h3><p class="auth">S. Ali, <b>U. Cappellazzo</b>, M. Ravanelli</p><div class="links"><a href="#" target="_blank">Paper</a><a href="#" target="_blank">Code</a></div></div></div>
 
-              <li>
-                <b> 17/01/2026.</b> 
-                I'm thrilled to announce that both my summer projects I worked on have been accepted for publication at IEEE ICASSP 2026! <b>1)</b> "<span style="font-family:'Comic Sans MS'">Omni-AVSR: Towards Unified Multimodal Speech Recognition with Large Language Models</span>". Omni-AVSR is an audio-visual LLM designed to support the tasks of Auditory/Visual/Audio-Visual Speech Recognition with a single unified model. Furthermore, Omni-AVSR supports elastic inference via an optimized matryoshka🪆representation learning such that the user can modulate the audio and visual granularity based on its resource constraints. Omni-AVSR achieves comparable or superior accuracy to state-of-the-art methods on multiple benchmarks while training a single model at substantially lower training and deployment cost. Along with the <a href="https://arxiv.org/abs/2511.07253" target="_blank">paper</a>, we also provide the code and checkpoints <a href="https://github.com/umbertocappellazzo/Omni-AVSR" target="_blank">here</a>. More information can be accessed in the dedicated project <a href="https://umbertocappellazzo.github.io/Omni-AVSR" target="_blank">website</a>! <b>2)</b> "<span style="font-family:'Comic Sans MS'">Mitigating Attention Sinks and Massive Activations in Audio-Visual Speech Recognition with LLMs</span>". In this paper, we explore two phenomena in audio-visual LLMs: 1) attention sinks, which are tokens that attract disproportionately high attention, and 2) associated massive activations in which some features of sink tokens exhibit huge activation in LLMs. We found that attention sinks and massive activations are present not only at the BOS token but also at intermediate low-semantic tokens across ASR, VSR, and AVSR tasks. We also show that massive activations originate in the MLP layers and correspond to fixed feature indices, with sink tokens exhibiting high cosine similarity to the BOS token. Building on these insights, we introduce a simple decorrelation loss that reduces cosine similarity between BOS and other tokens, effectively mitigating attention sinks and massive activations, while improving WERs under high audio-visual feature downsampling while remaining stable at lower downsampling rates. More information can be found in our <a href="https://arxiv.org/abs/2510.22603" target="_blank">paper</a>, and obviously our <a href="https://github.com/umbertocappellazzo/Llama-AVSR" target="_blank">code</a> is also publicily available!
-                
-              </li>
+      <div class="pub"><div class="pub-thumb"><img src="./images/Omni-AVSR.png" alt=""></div><div class="pub-body"><span class="venue">ICASSP '26</span><h3>Omni-AVSR: Towards Unified Multimodal Speech Recognition with LLMs</h3><p class="auth"><b>U. Cappellazzo</b>, X. Liu, P. Ma, S. Petridis, M. Pantic</p><div class="links"><a href="https://arxiv.org/abs/2511.07253" target="_blank">Paper</a><a href="https://umbertocappellazzo.github.io/Omni-AVSR" target="_blank">Web</a><a href="https://github.com/umbertocappellazzo/Omni-AVSR" target="_blank">Code</a></div></div></div>
 
-              <li>
-                <b> 19/09/2025.</b> 
-                I'm super excited to share that our paper "<a href="/#MoME"><span style="font-family:'Comic Sans MS'">MoME: Mixture of Matryoshka Experts for Audio-Visual Speech Recognition</span>"</a> has been accepted to <b><mark style="background-color: #FFF0F5;">NeurIPS 2025</mark></b>! The camera-ready version is available <a href="https://arxiv.org/abs/2510.04136v1" target="_blank">here</a>. We introduce <i>Mixture of Matryoshka Experts</i> (MoME), which unifies Matryoshka Representation Learning with sparse Mixture-of-Experts for AVSR. MoME augments frozen LLMs with top-k routed and shared experts, enabling dynamic capacity allocation across modalities and granularities while capturing global, cross-modal, and scale-invariant knowledge.
-                
-              </li>
+      <div class="pub"><div class="pub-thumb"><img src="./images/Sinks.png" alt=""></div><div class="pub-body"><span class="venue">ICASSP '26</span><h3>Mitigating Attention Sinks and Massive Activations in AVSR with LLMs</h3><p class="auth">Anand, <b>U. Cappellazzo</b>, S. Petridis, M. Pantic</p><div class="links"><a href="https://arxiv.org/abs/2510.22603" target="_blank">Paper</a><a href="https://github.com/umbertocappellazzo/Llama-AVSR" target="_blank">Code</a></div></div></div>
 
-              <li>
-                <b> 07/08/2025.</b> 
-                Delighted to announce that our paper "<a href="/#Llama-MTSK"><span style="font-family:'Comic Sans MS'">Adaptive Audio-Visual Speech Recognition via Matryoshka-Based Multimodal LLMs</span>"</a> has been accepted to <b><mark style="background-color: #B0C4DE;">IEEE ASRU 2025</mark></b>! The camera-ready version is available <a href="https://arxiv.org/abs/2503.06362" target="_blank">here</a>. 
-                One model, elastic inference, and strong performance across multiple tasks via <u>parameter-efficient</u> <b>matryoshka representation learning</b>.
-                I'll be sharing further details in Honolulu, Hawaii this December! 🌺
-              </li>
+      <div class="pub"><div class="pub-thumb"><img src="./images/MoME.png" alt=""></div><div class="pub-body"><span class="venue">NeurIPS '25</span><h3>MoME: Mixture of Matryoshka Experts for Audio-Visual Speech Recognition</h3><p class="auth"><b>U. Cappellazzo</b>, M. Kim, P. Ma, H. Chen, X. Liu, S. Petridis, M. Pantic</p><div class="links"><a href="https://proceedings.neurips.cc/paper_files/paper/2025/hash/392aae924264f2c56d1895b232bb46b6-Abstract-Conference.html" target="_blank">Paper</a><a href="https://openreview.net/forum?id=n6SrVj7I0g" target="_blank">OpenReview</a></div></div></div>
 
-              <li>
-                <b> 22/05/2025.</b> 
-                Super happy to share that our paper "<a href="/#Llama-SMoP"><span style="font-family:'Comic Sans MS'">Scaling and Enhancing LLM-based AVSR: A Sparse Mixture of Projectors Approach</span>"</a> has been accepted at <b><mark style="background-color: #DCDCDC;">Interspeech 2025</mark></b>!! The camera-ready version is available <a href="https://arxiv.org/abs/2505.14336" target="_blank">here</a>. We show how to effectively apply <b>Mixture of Experts</b> (MoE) to the projector layers for <b>LLM-based AVSR</b> (i.e., <b>Llama-SMoP</b>). Simple, efficient, and model-agnostic, yay! Looking forward to sharing more details in Rotterdam this August!
-              </li>
+      <div class="pub"><div class="pub-thumb"><img src="./images/Llama-MTSK.png" alt=""></div><div class="pub-body"><span class="venue">ASRU '25</span><h3>Adaptive Audio-Visual Speech Recognition via Matryoshka-Based Multimodal LLMs</h3><p class="auth"><b>U. Cappellazzo</b>, M. Kim, S. Petridis</p><div class="links"><a href="https://arxiv.org/abs/2503.06362" target="_blank">Paper</a></div></div></div>
 
-              <li>
-                <b> 11/03/2025.</b> 
-                I'm stoked to announce that I've joined the Department of Computing at <b>Imperial College London</b> with the iBUG team (led by Maja Pantic) as a research associate. I'm fortunate to be advised by Stavros Petridis. My research focus is on the efficient scaling of audio-visual models via Mixture of Experts and LLMs. Ad maiora! 
-              </li>
+      <div class="pub"><div class="pub-thumb"><img src="./images/Llama_SMoP.png" alt=""></div><div class="pub-body"><span class="venue">Interspeech '25</span><h3>Scaling and Enhancing LLM-based AVSR: A Sparse Mixture of Projectors Approach</h3><p class="auth"><b>U. Cappellazzo</b>, M. Kim, S. Petridis, D. Falavigna, A. Brutti</p><div class="links"><a href="https://arxiv.org/abs/2505.14336" target="_blank">Paper</a></div></div></div>
 
-              <li>
-                <b> 15/01/2025.</b> 
-                
-                Extremely proud and happy to announce that on January 15, 2025 I successfully defended my PhD "cum laude" at the University of Trento, Italy. What an incredible journey my 3-year PhD has been, full of experiences, collaborations, and achievements. If interested, <a href="PhD_Thesis/Thesis_PhD.pdf" target="_blank">here</a> you can read my <u><mark style="background-color: #D8BFD8;"><span style="font-family:'Comic Sans MS'">final PhD dissertation</span></mark></u>, where <a href="https://docs.google.com/presentation/d/15nzONJ3Bf1E70-8frrh8wvZXfW2hnujjLzDBhneUC_A/edit?usp=sharing" target="_blank">here</a> you can have access to my <u><mark style="background-color: #D8BFD8;"><span style="font-family:'Comic Sans MS'">PhD Defense slides</span></mark></u>.
-                
-              </li>
-              
-              <li>
-                <b> 20/12/2024.</b> 
-                
-                Delighted to announce that our paper "<a href="/#Llama-AVSR"><span style="font-family:'Comic Sans MS'">Large Language Models are Strong Audio-Visual Speech Recognition Learners</span>"</a> has been accepted at <b><mark style="background-color: #FF7F50;">ICASSP 2025</mark></b>. The camera-ready version will be uploaded <a href="https://arxiv.org/abs/2409.12319" target="_blank">here</a> soon.
+      <div class="pub"><div class="pub-thumb"><img src="./images/Llama-AVSR.png" alt=""></div><div class="pub-body"><span class="venue">ICASSP '25</span><h3>Large Language Models Are Strong Audio-Visual Speech Recognition Learners</h3><p class="auth"><b>U. Cappellazzo</b>, M. Kim, H. Chen, P. Ma, S. Petridis, D. Falavigna, A. Brutti, M. Pantic</p><div class="links"><a href="https://arxiv.org/abs/2409.12319" target="_blank">Paper</a><a href="https://github.com/umbertocappellazzo/Llama-AVSR" target="_blank">Code</a></div></div></div>
 
-                
-              </li>
+      <div class="pub"><div class="pub-thumb"><img src="./images/AST_main.png" alt=""></div><div class="pub-body"><span class="venue">MLSP '24</span><h3>Parameter-Efficient Transfer Learning of Audio Spectrogram Transformers</h3><p class="auth"><b>U. Cappellazzo</b>, D. Falavigna, A. Brutti, M. Ravanelli</p><div class="links"><a href="https://arxiv.org/abs/2312.03694" target="_blank">Paper</a><a href="https://github.com/umbertocappellazzo/PETL_AST" target="_blank">Code</a></div></div></div>
 
-                <li>
-                <b> 28/09/2024.</b> 
-                
-                Introducing <mark style="background-color: #FF7F50;">Llama-AVSR</mark>, a multimodal LLM with strong audio-visual speech recognition capabilities. 
-                We attain new state-of-the-art results on the LRS3 benchmark, the largest public AVSR benchmark, for the tasks of ASR and AVSR, and sota results for the task of VSR. We also unveil the key factors that lead to the effectiveness of Llama-AVSR: the choice of the pre-trained encoders and LLMs, the use of LoRA modules and how to achieve the optimal performance-efficiency trade-off via modality-aware compression rates.
+      <div class="pub"><div class="pub-thumb"><img src="./images/coconut.jpeg" alt=""></div><div class="pub-body"><span class="venue">ACL Findings '24</span><h3>Continual Contrastive Spoken Language Understanding</h3><p class="auth"><b>U. Cappellazzo</b>, E. Fini, M. Yang, D. Falavigna, A. Brutti, B. Raj</p><div class="links"><a href="https://arxiv.org/abs/2310.02699" target="_blank">Paper</a></div></div></div>
 
-                This work has been done while visiting Imperial College London 🇬🇧 in collaboration with Meta AI.
+      <div class="pub"><div class="pub-thumb"><img src="./images/MoA.png" alt=""></div><div class="pub-body"><span class="venue">Interspeech '24</span><h3>Efficient Fine-tuning of Audio Spectrogram Transformers via Soft Mixture of Adapters</h3><p class="auth"><b>U. Cappellazzo</b>, D. Falavigna, A. Brutti</p><div class="links"><a href="https://arxiv.org/abs/2402.00828" target="_blank">Paper</a><a href="https://github.com/umbertocappellazzo/PETL_AST" target="_blank">Code</a></div></div></div>
 
-                More details about the pre-print <a href="https://arxiv.org/abs/2409.12319" target="_blank">here</a>.
+      <div class="pub"><div class="pub-thumb"><img src="./images/new_index.png" alt=""></div><div class="pub-body"><span class="venue">Interspeech '24</span><h3>Evaluating and Improving Continual Learning in Spoken Language Understanding</h3><p class="auth">M. Yang, X. Li, <b>U. Cappellazzo</b>, S. Watanabe, B. Raj</p><div class="links"><a href="https://arxiv.org/abs/2402.10427" target="_blank">Paper</a></div></div></div>
 
-                
-              </li>
-              <li>
-                <b> 16/07/2024.</b> 
-                Excited to share that my paper <i><b><a href="/#PEFT_AST">Parameter-Efficient Transfer Learning of Audio Spectrogram Transformers</a></b></i> has been accepted at the <mark style="background-color: #F5BC17;">IEEE International Workshop on Machine Learning for Signal Processing (MLSP) 2024</mark>. The workshop will take place in September 22-25, 2024 at Imperial College London, London, UK. The paper investigates the efficient fine-tuning of the Audio Spectrogram Transformer model to multiple audio and speech tasks. We take into account various PEFT methods like bottleneck adapter, prompt-tuning, and LoRA. Furthermore, we propose a new adapter module that leverages the convolution module of the conformer architecture. Our experiments reveal that our <b><mark style="background-color: #CC99FF;">conformer adapter</mark></b> outstrips the other PEFT methods and is able to surpass or achieve performance parity with full fine-tuning by updating only 0.29% of the parameters. We also show that <b>1)</b> the conformer adapter is effective in few-shot efficient transfer learning, <b>2)</b> attains optimal results regardless of the amount of the allocated parameters, and <b>3)</b> can be applied to other pre-trained models like Wav2Vec 2.0.
-              </li>
+      <div class="pub"><div class="pub-thumb"><img src="./images/CL_MI.png" alt=""></div><div class="pub-body"><span class="venue">ICASSP '24</span><h3>Improving Continual Learning of Acoustic Scene Classification via Mutual Information Optimization</h3><p class="auth">M. Yang, <b>U. Cappellazzo</b>, X. Li, S. Watanabe, B. Raj</p><div class="links"><a href="https://ieeexplore.ieee.org/abstract/document/10446846" target="_blank">Paper</a></div></div></div>
 
-              <li>
-                <b> 04/06/2024.</b> 
-                So glad to announce the recent acceptance of <u>three</u> papers of mine &#128640 &#128640 &#128640!  <b>1)</b> "<a href="/#continual_contrastive">Continual Contrastive Spoken Language Understanding</a>" has been accepted to <mark style="background-color: #EE82EE;">ACL Findings 2024</mark>! <b>2)</b> "<a href="/#soft_moa">Efficient Fine-tuning of Audio Spectrogram Transformers via Soft Mixture of Adapters"</a> and <b>3)</b> "<a href="/#towards_unified">Towards Unified Evaluation of Continual Learning in Spoken Language Understanding"</a> (the camera-ready version will be soon released) have been accepted to <mark style="background-color: #66CDAA;">Interspeech 2024!</mark>
-              </li>
-              <li>
-                <b> 22/04/2024.</b> 
-                Excited to announce that on April 22 I gave a talk @ University of Cambridge for the CUED Speech Group Seminars. The title of the talk is "Parameter-Efficient Fine-tuning for Audio and Speech Processing". The first part of the talk investigates the use of PEFT methods (e.g., LoRA, adapters, prompt-tuning) for audio and speech downstream tasks, with a focus on the efficient adaptation of the Audio Spectrogram Transformer. In the second part I presented two recent works of mine to boost PEFT performance based on Soft Mixture of Adapters and new ad-hoc adapter designs. 
-              </li>
-              <li>
-                <b> 20/02/2024.</b> 
-                &#128227 &#128227 Excited to announce that I've officially joined the department of computing at Imperial College London, London as a Visiting PhD researcher &#128640. I'll be exploring the use of LLMs for audio-visual speech recognition &#128293. I'm fortunate to be advised by Stavros Petridis and Pingchuan Ma from Meta AI.
-              </li>
+      <div class="pub"><div class="pub-thumb"><img src="./images/EE_SS.png" alt=""></div><div class="pub-body"><span class="venue">ICASSP '24 WS</span><h3>Training Dynamic Models using Early Exits for ASR on Resource-Constrained Devices</h3><p class="auth">G. A. Wright, <b>U. Cappellazzo</b>, S. Zaiem, D. Raj, L. Ondel Yang, D. Falavigna, M. Ali, A. Brutti</p><div class="links"><a href="https://arxiv.org/abs/2309.09546" target="_blank">Paper</a><a href="https://github.com/augustgw/early-exit-transformer" target="_blank">Code</a></div></div></div>
 
-              <li>
-                <b> 02/02/2024.</b> 
-                Excited to share a new pre-print: <i><b>Efficient Fine-tuning of Audio Spectrogram Transformers via Soft Mixture of Adapters</b></i>. In this <a href="https://arxiv.org/abs/2402.00828" target="_blank">paper</a> we propose the use of <b><mark style="background-color: #FF4500;">Soft-MoA</mark></b> for the efficient fine-tuning of the AST model, leveraging a recent approach by Google DeepMind (Soft MoE). We test Soft-MoA in 4 audio and speech benchmarks, showcasing that it attains competitive performance with respect to the dense counterpart, while drastically trimming down the computational cost. We also demonstrate that Soft-MoA outperforms the single adapter approach. We finally perform multiple ablation studies on pivotal aspects of Soft-MoA. This paper is the second paper of a trilogy &#127916: the first <a href="/#PETL">paper</a> provides a birds's eye overview of PETL methods for AST, while the third and last one will be released in the next few months, so get ready for the last chapter! &#128378 
+      <div class="pub"><div class="pub-thumb"><img src="./images/IS_slurp.png" alt=""></div><div class="pub-body"><span class="venue">Interspeech '23</span><h3>Sequence-Level Knowledge Distillation for Class-Incremental End-to-End SLU</h3><p class="auth"><b>U. Cappellazzo</b>, M. Yang, D. Falavigna, A. Brutti</p><div class="links"><a href="https://arxiv.org/abs/2305.13899" target="_blank">Paper</a><a href="https://github.com/umbertocappellazzo/SLURP-SeqKD" target="_blank">Code</a></div></div></div>
 
+      <div class="pub"><div class="pub-thumb"><img src="./images/FSC_CL.png" alt=""></div><div class="pub-body"><span class="venue">Interspeech '23</span><h3>An Investigation of the Combination of Rehearsal and Knowledge Distillation in Continual Learning for SLU</h3><p class="auth"><b>U. Cappellazzo</b>, D. Falavigna, A. Brutti</p><div class="links"><a href="https://arxiv.org/abs/2211.08161" target="_blank">Paper</a><a href="https://github.com/umbertocappellazzo/CL_SLU" target="_blank">Code</a></div></div></div>
 
-              </li>
+    </div>
+  </div></section>
 
+  <!-- NEWS -->
+  <section id="news"><div class="wrap">
+    <div class="kicker">News</div><h2 class="sec">LATEST UPDATES</h2>
+    <div class="news"><div class="date">05 Jun '26</div><div class="body"><b>3/3 papers accepted to INTERSPEECH 2026</b> (1 long, 2 regular): Dr. SHAP-AV, VIB-AVSR, MambAdapter. See you in Sydney! 🇦🇺</div></div>
+    <div class="news"><div class="date">13 Mar '26</div><div class="body">New paper <b>Dr. SHAP-AV</b> — first comprehensive study of modality contributions in AVSR at scale. <a href="https://umbertocappellazzo.github.io/Dr-SHAP-AV/" target="_blank">Project</a> · <a href="https://arxiv.org/pdf/2603.12046" target="_blank">Paper</a> · <a href="https://github.com/umbertocappellazzo/Dr-SHAP-AV/" target="_blank">Code</a></div></div>
+    <div class="news"><div class="date">17 Jan '26</div><div class="body">Two papers accepted to <b>IEEE ICASSP 2026</b>: Omni-AVSR and a study on attention sinks &amp; massive activations in audio-visual LLMs.</div></div>
+    <div class="news"><div class="date">19 Sep '25</div><div class="body"><b>MoME</b> accepted to <b>NeurIPS 2025</b> — unifying Matryoshka representation learning with sparse Mixture-of-Experts.</div></div>
+    <div class="news"><div class="date">07 Aug '25</div><div class="body"><b>Llama-MTSK</b> accepted to <b>IEEE ASRU 2025</b>. See you in Honolulu! 🌺</div></div>
+    <div class="news"><div class="date">22 May '25</div><div class="body"><b>Llama-SMoP</b> accepted to <b>Interspeech 2025</b> — a sparse Mixture of Projectors for LLM-based AVSR.</div></div>
+    <div class="news"><div class="date">11 Mar '25</div><div class="body">Joined <b>Imperial College London</b> (iBUG) as a Research Associate, advised by Stavros Petridis.</div></div>
+    <div class="news"><div class="date">15 Jan '25</div><div class="body">Defended my PhD <b>cum laude</b> at the University of Trento. <a href="PhD_Thesis/Thesis_PhD.pdf" target="_blank">Dissertation</a> · <a href="https://docs.google.com/presentation/d/15nzONJ3Bf1E70-8frrh8wvZXfW2hnujjLzDBhneUC_A/edit?usp=sharing" target="_blank">Slides</a></div></div>
+  </div></section>
 
+  <!-- CONTACT -->
+  <section id="contact"><div class="wrap">
+    <div class="kicker">Get in touch</div><h2 class="sec">LET'S COLLABORATE</h2>
+    <div class="contact-card">
+      <p style="margin:0;font-size:16px;max-width:60ch">Always happy to discuss audio &amp; speech representation learning, multimodal LLMs, or collaborations. Reach me at <b>umbertocappellazzo [at] gmail [dot] com</b>.</p>
+    </div>
+  </div></section>
 
-              <li>
-                  <b> 03/09/2023.</b> 
-                  I've started collecting the most interesting recent papers pertaining to Continual Learning. Categorized based on the their domain (<i>audio</i>, <i>text</i>, <i>vision</i>) and on the methods employed (<i>regularization</i>, <i>rehearsal</i>, <i>architectural</i>), the papers you can find in this <a href="https://github.com/umbertocappellazzo/CL_Anthology" target="_blank">github repo</a> provide a bird's-eye view of what "learning in a sequential fashion" truly refers to. Willing to accept any PR on a compelling paper worth being included in this compendium! 
-
-              </li>
-
-              <li>
-                  <b> 06/08/2023.</b> The curtain has fallen on JSALT 2023! It's been a wonderful experience, working together with several researchers towards the same objective: <b><mark style="background-color: #CC99FF;">make FST great again</mark></b>! I worked on the integration of early-exit techniques to make the training and inference of CTC/MMI systems dynamical. If you want to know more about my work and that of my colleagues, you can watch the saved <a href="https://www.youtube.com/watch?v=O9vw5TDZ2Ug" target="_blank">YouTube live stream</a> of the last day where my group discussed all our achievements! 
-
-              </li>
-
-              <li>
-                  <b> 23/05/2023.</b> Super happy to share that I will join <a href="https://jsalt2023.univ-lemans.fr/en/index.html" target="_blank">JSALT 2023</a> in Le Mans, France this summer! I will be part of the "<i>Finite state methods with modern neural Architectures for speech applications and beyond</i> " group. I will be working with people from Google, Telecom Paris, JHU, among others. 
-
-              </li>
-
-              <li>
-                  <b> 20/05/2023.</b>   Both my papers have been accepted at <b><mark>INTERSPEECH 2023</mark></b>! &#128640&#128640 See you in Dublin! &#127808 <br /> 
-                  <strong>1)</strong> <i>"An Investigation of the Combination of Rehearsal and Knowledge Distillation in Continual Learning For Spoken Language Understanding"</i>. <br />
-                  <strong>2)</strong> <i>"Sequence-Level Knowledge Distillation for Class-Incremental End-to-End Spoken Language Understanding"</i>.  
-              </li>
-              
-            </ul>
-
-
-
-<h2 id="publications">Publications</h2>
-
-
-<br>
-
-<div id="PETL">
-      <img class="img-fluid" src="./images/SHAP_main_diagram.png", width="300" height="129">
-      <div class="portfolio_text">
-        <div class="paper_title" style="font-family:'Comic Sans MS'" id="DR-SHAP-AV"><i>Dr. SHAP-AV: Decoding Relative Modality Contributions via Shapley
-          Attribution in Audio-Visual Speech Recognition
-        </i></div>
-        <div class="authors"><strong>U. Cappellazzo</strong>, S. Petridis, M. Pantic
-        </div>
-        <div class="submission_info">
-          <mark style="background-color: #DAA520;">INTERSPEECH [Long Track]</mark>
-        </div>
-        <div class="link">
-          <a href="https://umbertocappellazzo.github.io/Dr-SHAP-AV">Website</a>
-          <a href="https://arxiv.org/abs/2603.12046">Paper</a>
-          <a href="https://github.com/umbertocappellazzo/Dr-SHAP-AV">Code</a>&emsp;
-        </div>
-      </div>
-</div>
-
-<br>
-
-
-<div id="PETL">
-      <img class="img-fluid" src="./images/VIB-AVSR.png", width="250" height="230">
-      <div class="portfolio_text">
-        <div class="paper_title" style="font-family:'Comic Sans MS'" id="VIB-AVSR"><i>VIB-AVSR: Variational Information Bottleneck for Noise-Robust LLM-Based Audio-Visual Speech Recognition
-        </i></div>
-        <div class="authors">P. Arora, N. Singh, <strong>U. Cappellazzo</strong>, S. Petridis, M. Pantic
-        </div>
-        <div class="submission_info">
-          <mark style="background-color: #DAA520;">INTERSPEECH</mark>
-        </div>
-        <div class="link">
-          <a href="??">Paper</a>
-          <a href="??">Code</a>&emsp;
-        </div>
-      </div>
-</div>
-
-<br>
-<br>
-<br>
-<br>
-<br>
-
-<div id="PETL">
-      <img class="img-fluid" src="./images/Mambadapter.png", width="250" height="180">
-      <div class="portfolio_text">
-        <div class="paper_title" style="font-family:'Comic Sans MS'" id="mambadapter"><i>MambAdapter: Lightweight Mamba-Based Adapters for Parameter-Efficient Transfer Learning in Speech and Audio</i>
-      </div>
-        <div class="authors">S. Ali, <strong>U. Cappellazzo</strong>, M. Ravanelli
-        </div>
-        <div class="submission_info">
-          <mark style="background-color: #DAA520;">INTERSPEECH</mark>
-        </div>
-        <div class="link">
-          <a href="??">Paper</a>
-          <a href="??">Code</a>&emsp;
-        </div>
-      </div>
-</div>
-
-<br>
-<br>
-<br>
-
-<div id="PETL">
-      <img class="img-fluid" src="./images/Omni-AVSR.png", width="291" height="119">
-      <div class="portfolio_text">
-        <div class="paper_title" style="font-family:'Comic Sans MS'" id="Omni-AVSR"><i>Omni-AVSR: Towards Unified Multimodal Speech Recognition with Large Language Models
-        </i></div>
-        <div class="authors"><strong>U. Cappellazzo</strong>, X. Liu, P. Ma, S. Petridis, M. Pantic
-        </div>
-        <div class="submission_info">
-          <mark style="background-color: #9ACD32;">IEEE ICASSP 2026</mark>
-        </div>
-        <div class="link">
-          <a href="https://arxiv.org/abs/2511.07253">Paper</a>
-          <a href="https://umbertocappellazzo.github.io/Omni-AVSR">Website</a>
-          <a href="https://github.com/umbertocappellazzo/Omni-AVSR">Code</a>&emsp;
-        </div>
-      </div>
-</div>
-
-<br>
-
-<div id="PETL">
-      <img class="img-fluid" src="./images/Sinks.png", width="291" height="128">
-      <div class="portfolio_text">
-        <div class="paper_title" style="font-family:'Comic Sans MS'" id="Sinks"><i>Mitigating Attention Sinks and Massive Activations in Audio-Visual Speech Recognition with LLMs
-        </i></div>
-        <div class="authors">Anand, <strong>U. Cappellazzo</strong>, S. Petridis, M. Pantic
-        </div>
-        <div class="submission_info">
-          <mark style="background-color: #9ACD32;">IEEE ICASSP 2026</mark>
-        </div>
-        <div class="link">
-          <a href="https://arxiv.org/abs/2510.22603">Paper</a>
-          <a href="https://github.com/umbertocappellazzo/Llama-AVSR">Code</a>&emsp;
-        </div>
-      </div>
-</div>
-
-<br>
-
-
-<div id="PETL">
-      <img class="img-fluid" src="./images/MoME.png", width="291" height="119">
-      <div class="portfolio_text">
-        <div class="paper_title" style="font-family:'Comic Sans MS'" id="MoME"><i>MoME: Mixture of Matryoshka Experts for Audio-Visual Speech Recognition</i></div>
-        <div class="authors"><strong>U. Cappellazzo</strong>, M. Kim, P. Ma, H. Chen, X. Liu, S. Petridis, M. Pantic
-        </div>
-        <div class="submission_info">
-          <mark style="background-color: #FFF0F5;">NeurIPS 2025</mark>
-        </div>
-        <div class="link">
-          <a href="https://proceedings.neurips.cc/paper_files/paper/2025/hash/392aae924264f2c56d1895b232bb46b6-Abstract-Conference.html">Paper</a>
-          <a href="https://openreview.net/forum?id=n6SrVj7I0g">OpenReview</a>&emsp;
-        </div>
-      </div>
-</div>
-
-<br>
-
-<div id="PETL">
-      <img class="img-fluid" src="./images/Llama-MTSK.png", width="291" height="150">
-      <div class="portfolio_text">
-        <div class="paper_title" style="font-family:'Comic Sans MS'" id="Llama-MTSK"><i>Adaptive Audio-Visual Speech Recognition via Matryoshka-Based Multimodal LLMs</i></div>
-        <div class="authors"><strong>U. Cappellazzo</strong>, M. Kim, S. Petridis
-        </div>
-        <div class="submission_info">
-          <mark style="background-color: #B0C4DE;">IEEE ASRU 2025</mark>
-        </div>
-        <div class="link">
-          <a href="https://arxiv.org/abs/2503.06362">Paper</a>
-        </div>
-      </div>
-</div>
-
-<br>
-<br>
-
-<div id="PETL">
-      <img class="img-fluid" src="./images/Llama_SMoP.png", width="350" height="100">
-      <div class="portfolio_text">
-        <div class="paper_title" style="font-family:'Comic Sans MS'" id="Llama-SMoP"><i>Scaling and Enhancing LLM-based AVSR: A Sparse Mixture of Projectors Approach</i></div>
-        <div class="authors"><strong>U. Cappellazzo</strong>, M. Kim, S. Petridis, D. Falavigna, A. Brutti
-        </div>
-        <div class="submission_info">
-          <mark style="background-color: #DCDCDC;">INTERSPEECH 2025</mark>
-        </div>
-        <div class="link">
-          <a href="https://arxiv.org/abs/2505.14336">Paper</a>
-        </div>
-      </div>
-</div>
-
-<br>
-
-<div id="PETL">
-      <img class="img-fluid" src="./images/Llama-AVSR.png", width="222" height="200">
-      <div class="portfolio_text">
-        <div class="paper_title" style="font-family:'Comic Sans MS'" id="Llama-AVSR"><i>Large Language Models Are Strong Audio-Visual Speech Recognition Learners</i></div>
-        <div class="authors"><strong>U. Cappellazzo</strong>, M. Kim, H. Chen, P. Ma, S. Petridis, D. Falavigna, A. Brutti, M. Pantic
-        </div>
-        <div class="submission_info">
-          <mark style="background-color: #FF7F50;"> IEEE ICASSP 2025</mark>
-        </div>
-        <div class="link">
-          <a href="https://arxiv.org/abs/2409.12319">Paper</a>
-          <a href="https://github.com/umbertocappellazzo/Llama-AVSR">Code</a>&emsp;
-        </div>
-      </div>
-</div>
-
-<br>
-<br>
-<br>
-
-<div id="PETL">
-      <img class="img-fluid" src="./images/AST_main.png", width="160" height="200">
-      <div class="portfolio_text">
-        <div class="paper_title" style="font-family:'Comic Sans MS'" id="PEFT_AST"><i>Parameter-Efficient Transfer Learning of Audio
-        Spectrogram Transformers</i></div>
-        <div class="authors"><strong>U. Cappellazzo</strong>, D. Falavigna, A. Brutti, M. Ravanelli
-        </div>
-        <div class="submission_info">
-          <mark style="background-color: #F5BC17;">IEEE MLSP Workshop, 2024</mark>
-        </div>
-        <div class="link">
-          <a href="https://arxiv.org/abs/2312.03694">Paper</a>
-          <a href="https://github.com/umbertocappellazzo/PETL_AST">Code</a>&emsp;
-        </div>
-      </div>
-</div>
-
-<br>
-<br>
-<br>
-<br>
-
-<div>
-      <img class="img-fluid" src="./images/coconut.jpeg", width="300" height="100">
-      <div class="portfolio_text">
-        <div class="paper_title" style="font-family:'Comic Sans MS'" id="continual_contrastive"><i>Continual Contrastive Spoken Language Understanding</i></div>
-        <div class="authors"><strong>U. Cappellazzo</strong>, E. Fini, M. Yang, D. Falavigna, A. Brutti, B. Raj
-        </div>
-        <div class="submission_info">
-          <mark style="background-color: #EE82EE;">ACL Findings 2024</mark>
-        </div>
-        <div class="link">
-          <a href="https://arxiv.org/abs/2310.02699">Paper</a>
-        </div>
-      </div>
-</div>
-
-<br>
-
-<div>
-      <img class="img-fluid" src="./images/MoA.png", width="300" height="110">
-      <div class="portfolio_text">
-        <div class="paper_title" style="font-family:'Comic Sans MS'" id="soft_moa"><i>Efficient Fine-tuning of Audio Spectrogram Transformers via Soft Mixture of Adapters</i></div>
-        <div class="authors"><strong>U. Cappellazzo</strong>, D. Falavigna, A. Brutti
-        </div>
-        <div class="submission_info">
-          <mark style="background-color: #66CDAA;">INTERSPEECH, 2024</mark>
-        </div>
-        <div class="link">
-          <a href="https://arxiv.org/abs/2402.00828">Paper</a>
-          <a href="https://github.com/umbertocappellazzo/PETL_AST">Code</a>&emsp;
-        </div>
-      </div>
-</div>
-
-
-<br>
-<div>
-      <img class="img-fluid" src="./images/new_index.png", width="200" height="192">
-      <div class="portfolio_text">
-        <div class="paper_title" style="font-family:'Comic Sans MS'" id="towards_unified"><i>Evaluating and Improving Continual Learning in Spoken Language Understanding</i></div>
-        <div class="authors">M. Yang, X. Li, <strong>U. Cappellazzo</strong>, S. Watanabe, B. Raj
-        </div>
-        <div class="submission_info">
-          <mark style="background-color:#66CDAA ;">INTERSPEECH, 2024</mark>
-        </div>
-        <div class="link">
-          <a href="https://arxiv.org/abs/2402.10427">Paper</a>
-        </div>
-      </div>
-</div>
-
-<br>
-<br>
-<br>
-<br>
-
-<div>
-      <img class="img-fluid" src="./images/CL_MI.png", width="250" height="153">
-      <div class="portfolio_text">
-        <div class="paper_title" style="font-family:'Comic Sans MS'"><i>Improving continual learning of acoustic scene classification via mutual information optimization</i></div>
-        <div class="authors">M. Yang, <strong>U. Cappellazzo</strong>, X. Li, S. Watanabe, B. Raj
-        </div>
-        <div class="submission_info">
-          <mark style="background-color: #87CEEB;">IEEE ICASSP 2024</mark>
-        </div>
-        <div class="link">
-          <a href="https://ieeexplore.ieee.org/abstract/document/10446846">Paper</a>
-        </div>
-      </div>
-</div>
-
-<br>
-<br>
-<br>
-
-<div>
-      <img class="img-fluid" src="./images/EE_SS.png", width="300" height="131">
-      <div class="portfolio_text">
-        <div class="paper_title" style="font-family:'Comic Sans MS'"><i>Training Dynamic Models using Early Exits for Automatic Speech Recognition on Resource-constrained Devices</i></div>
-        <div class="authors"> G. A. Wright, <strong>U. Cappellazzo</strong>, S. Zaiem, D. Raj, L. Ondel Yang,  D. Falavigna, M. Ali, A. Brutti
-        </div>
-        <div class="submission_info">
-          <mark style="background-color: #FFEBCD;">Self-supervision in Audio, Speech and Beyond Workshop, IEEE ICASSP 2024</mark>
-        </div>
-        <div class="link">
-          <a href="https://arxiv.org/abs/2309.09546">Paper</a>&emsp;
-          <a href="https://github.com/augustgw/early-exit-transformer">Code</a>&emsp;
-        </div>
-      </div>
-</div>
-
-<br>
-<div>
-      <img class="img-fluid" src="./images/IS_slurp.png", width="300" height="165">
-      <div class="portfolio_text">
-        <div class="paper_title" style="font-family:'Comic Sans MS'"><i>Sequence-Level Knowledge Distillation for Class-Incremental End-to-End Spoken Language Understanding</i></div>
-        <div class="authors"> <strong>Umberto Cappellazzo</strong>, Muqiao Yang, Daniele Falavigna, Alessio Brutti
-        </div>
-        <div class="submission_info">
-          <mark style="background-color: #CC99FF;">INTERSPEECH 2023</mark>
-        </div>
-        <div class="link">
-          <a href="https://arxiv.org/abs/2305.13899">Paper</a>&emsp;
-          <a href="https://github.com/umbertocappellazzo/SLURP-SeqKD">Code</a>&emsp;
-        </div>
-      </div>
-</div>
-
-<br>
-<div>
-      <img class="img-fluid" src="./images/FSC_CL.png", width="300" height="180">
-      <div class="portfolio_text">
-        <div class="paper_title" style="font-family:'Comic Sans MS'">An Investigation of the Combination of Rehearsal and Knowledge Distillation in Continual Learning for Spoken Language Understanding
-        </div>
-        <div class="authors"> <strong>Umberto Cappellazzo</strong>, Daniele Falavigna, Alessio Brutti
-        </div>
-        <div class="submission_info">
-          <mark style="background-color: #CC99FF;">INTERSPEECH 2023</mark>
-        </div>
-        <div class="link">
-          <a href="https://arxiv.org/abs/2211.08161">Paper</a>&emsp;
-          <a href="https://github.com/umbertocappellazzo/CL_SLU">Code</a>&emsp;
-        </div>
-      </div>
-</div>
-<br>
-
-
-<h2 id="work_experience">Work Experience</h2>
-<ul>
-  <li><span><img src="./images/Imperial_logo.jpg" width="20px"></span>
-  Research Associate in the iBUG group<br>
-  Imperial College London, London, UK<br>
-  Mar 2025-ongoing<br>
-  <b>Research interests</b>: <i>Efficient massive scaling of audio-visual models, Mixture of Experts, Multimodal LLMs</i> <br>
-  <b>Advisor</b>: Stavros Petridis<br>
-  </li>
-
-</ul>
-
-<h2 id="education">Education</h2>
-<ul>
-  <li><span><img src="./images/unitn_logo.png" width="20px"></span>
-  PhD in Information Engineering and Computer Science  <br>
-  University of Trento, Trento, Italy<br>
-  Nov 2021-Jan 2025<br>
-  <b>Title</b>: <i>Efficient Knowledge Transfer and Adaptation for Speech and Beyond</i> <br>
-  <b>Supervisors</b>: Daniele Falavigna, Alessio Brutti<br>
-  </li>
-
-  <li>
-    <span><img src="./images/logo_unipd.png" width="20px"></span>
-  M.S. in Telecommunication Engineering<br>
-  University of Padova, Padova, Italy<br>
-  2016-2019<br>
-  <b>Thesis title</b>: <i>A Deep Learning-Based ECG Delineator: Evaluation and Comparison on Standard Databases</i>. 
-  <br>
-  <b>Supervisors</b>: Michele Rossi, Matteo Gadaleta
-  </li>
-
-  <li>
-    <span><img src="./images/logo_unipd.png" width="20px"></span>
-  B.S. in Information Engineering<br>
-  University of Padova, Padova, Italy<br>
-  2013-2016<br>
-  <b>Thesis title</b>: <i>Message Authentication over an Ideal or Noisy Channel</i> 
-  <br>
-  <b>Supervisor</b>: Nicola Laurenti
-  </li>
-
-</ul>
-
-
-<h2>Contact</h2>
-Feel free to reach out to me if you have any questions upon my research activity. Plus, I'm always apt to new collaborations! Please contact me at <i>umbertocappellazzo [at] gmail [dot] com</i>.
-    
-</br>
-</br>
-
-  </body>
+  <footer class="foot">★ © UMBERTO CAPPELLAZZO 2026 ★</footer>
+</body>
 </html>
